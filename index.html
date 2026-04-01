@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人履歷 - 郭千郁</title>
-
     <style>
-        /* 整體背景與字體設定 */
         body {
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-            background-color: #f4f1ed; /* 淺米色背景 */
+            background-color: #f4f1ed;
             color: #4a4a4a;
             margin: 0;
             padding: 40px 20px;
@@ -17,18 +15,15 @@
             justify-content: center;
         }
 
-        /* 容器設計 */
         .container {
-            max-width: 800px;
+            max-width: 650px; /* 集中寬度，讓版型美觀 */
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 20px;
         }
 
-        /* 標題區域 (滿版) */
         .header {
-            grid-column: 1 / -1;
             background: #ffffff;
             padding: 30px;
             border-radius: 30px;
@@ -46,19 +41,9 @@
             border: 3px solid #bfa37a;
         }
 
-        .header h1 {
-            margin: 0;
-            color: #bfa37a;
-            font-size: 28px;
-        }
+        .header h1 { margin: 0; color: #bfa37a; font-size: 28px; }
+        .header p { margin: 5px 0 0; color: #888; }
 
-        .header p {
-            margin: 5px 0 0;
-            color: #888;
-            letter-spacing: 1px;
-        }
-
-        /* 區塊通用樣式 */
         .section {
             background: #ffffff;
             padding: 25px;
@@ -72,30 +57,24 @@
             font-size: 20px;
             margin-top: 0;
             color: #5d534a;
+            margin-bottom: 15px;
         }
 
-        /* 按鈕樣式 */
         .button {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
             padding: 8px 18px;
             background: #bfa37a;
             color: white;
             border-radius: 20px;
             cursor: pointer;
             font-size: 13px;
-            transition: 0.3s;
         }
 
-        .button:hover {
-            background: #a68d68;
-        }
-
-        /* 技能條設計 */
         .skill-bar {
             background: #eee;
-            height: 10px;
-            border-radius: 5px;
+            height: 12px;
+            border-radius: 6px;
             margin-bottom: 15px;
             overflow: hidden;
         }
@@ -104,44 +83,26 @@
             display: block;
             height: 100%;
             background: #bfa37a;
-            border-radius: 5px;
         }
 
-        /* 手機版適應 */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            .header, .section {
-                grid-column: 1;
-                border-radius: 20px;
-            }
-
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header img {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
+        @media (max-width: 480px) {
+            .header { flex-direction: column; text-align: center; }
+            .header img { margin-right: 0; margin-bottom: 15px; }
         }
     </style>
 </head>
-
 <body>
 
-<div class="header">
-    <img src="images/photo.jpg" alt="個人照片">
-    <div>
-        <h1 id="name">郭千郁</h1>
-        <p id="title">大學生 / 創作者</p>
+<div class="container">
+    <div class="header">
+        <img src="images/photo.jpg" alt="個人照片">
+        <div>
+            <h1 id="name">郭千郁</h1>
+            <p id="title">大學生 / 創作者</p>
+        </div>
     </div>
-</div>
 
-    <div class="section" style="grid-column: 1 / -1;">
+    <div class="section">
         <h2>自我介紹</h2>
         <p id="about">我是一位對設計與創作充滿熱情的學生，目前就讀於亞洲大學，喜歡探索不同領域並持續成長。</p>
         <div class="button" onclick="editAbout()">修改內容</div>
@@ -149,7 +110,7 @@
 
     <div class="section">
         <h2>學歷</h2>
-        <ul style="padding-left: 20px; line-height: 1.8;">
+        <ul style="line-height: 1.8;">
             <li>亞洲大學（就讀中）</li>
             <li>聽力暨語言治療學系</li>
         </ul>
@@ -161,23 +122,21 @@
         <p>📱 Phone: 0972119860</p>
     </div>
 
-    <div class="section" style="grid-column: 1 / -1;">
+    <div class="section">
         <h2>專業技能</h2>
         <p>HTML</p>
-        <div class="繪畫"><span style="width:80%"></span></div>
+        <div class="skill-bar"><span style="width:80%"></span></div>
         <p>CSS</p>
-        <div class="小提琴"><span style="width:75%"></span></div>
+        <div class="skill-bar"><span style="width:75%"></span></div>
         <p>JavaScript</p>
-        <div class="皮克敏專業玩家"><span style="width:70%"></span></div>
+        <div class="skill-bar"><span style="width:70%"></span></div>
     </div>
 </div>
 
 <script>
 function editAbout() {
     let newText = prompt("請輸入新的自我介紹：", document.getElementById("about").innerText);
-    if(newText !== null && newText !== "") {
-        document.getElementById("about").innerText = newText;
-    }
+    if(newText) document.getElementById("about").innerText = newText;
 }
 </script>
 
