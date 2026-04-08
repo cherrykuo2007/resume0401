@@ -85,16 +85,19 @@
             background: #bfa37a;
         }
 
-        .footer-link {
+        /* 底部連結樣式 */
+        .footer-source {
             text-align: center;
             font-size: 12px;
-            color: #aaa;
+            color: #999;
             margin-top: 20px;
+            padding-bottom: 20px;
         }
 
-        .footer-link a {
+        .footer-source a {
             color: #bfa37a;
             text-decoration: none;
+            word-break: break-all;
         }
 
         @media (max-width: 480px) {
@@ -105,7 +108,7 @@
 </head>
 <body>
 
-<audio id="bgMusic" loop autoplay>
+<audio id="bgMusic" loop>
     <source src="bg.mp3" type="audio/mpeg">
 </audio>
 
@@ -121,39 +124,3 @@
     <div class="section">
         <h2>自我介紹</h2>
         <p id="about">學號114018050，我是一位對設計與創作充滿熱情的學生，目前就讀於亞洲大學，喜歡探索不同領域並持續成長。</p>
-        <div class="button" onclick="editAbout()">修改內容</div>
-    </div>
-
-    <div class="section">
-        <h2>學歷</h2>
-        <ul style="line-height: 1.8;">
-            <li>亞洲大學（就讀中）</li>
-            <li>聽力暨語言治療學系</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>聯絡方式</h2>
-        <p>📧 Email: cherrykuo2007@gmail.com</p>
-        <p>📱 Phone: 09XXXXXXXX</p>
-    </div>
-
-    <div class="section">
-        <h2>專業技能</h2>
-        <p>繪畫</p>
-        <div class="skill-bar"><span style="width:80%"></span></div>
-        <p>小提琴</p>
-        <div class="skill-bar"><span style="width:75%"></span></div>
-        <p>皮克敏勤奮玩家</p>
-        <div class="skill-bar"><span style="width:70%"></span></div>
-    </div>
-
-    <div class="footer-link">
-        背景音樂來源：<a href="https://www.motionelements.com/zh-hant/stock-music-41700584-vlog-bgm-with-a-slightly-happy-mood" target="_blank">MotionElements</a>
-    </div>
-</div>
-
-<script>
-function editAbout() {
-    let newText = prompt("請輸入新的自我介紹：", document.getElementById("about").innerText);
-    if(newText) document.getElementById("about
