@@ -12,15 +12,22 @@
             margin: 0;
             padding: 40px 20px;
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* 調整為 column 以便放置音樂播放器 */
+            align-items: center;
         }
 
         .container {
-            max-width: 650px; /* 集中寬度，讓版型美觀 */
+            max-width: 650px; 
             width: 100%;
             display: flex;
             flex-direction: column;
             gap: 20px;
+        }
+
+        /* 音樂播放器樣式 */
+        .audio-player {
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .header {
@@ -92,6 +99,14 @@
     </style>
 </head>
 <body>
+
+<div class="audio-player">
+    <p style="font-size: 14px; color: #bfa37a; margin-bottom: 10px;">🎵 背景音樂播放</p>
+    <audio controls loop>
+        <source src="bg.mp3" type="audio/mpeg">
+        您的瀏覽器不支持音頻元素。
+    </audio>
+</div>
 
 <div class="container">
     <div class="header">
