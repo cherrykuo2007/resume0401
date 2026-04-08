@@ -12,8 +12,7 @@
             margin: 0;
             padding: 40px 20px;
             display: flex;
-            flex-direction: column; /* 調整為 column 以便放置音樂播放器 */
-            align-items: center;
+            justify-content: center;
         }
 
         .container {
@@ -22,12 +21,6 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-        }
-
-        /* 音樂播放器樣式 */
-        .audio-player {
-            margin-bottom: 20px;
-            text-align: center;
         }
 
         .header {
@@ -92,6 +85,18 @@
             background: #bfa37a;
         }
 
+        .footer-link {
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 20px;
+        }
+
+        .footer-link a {
+            color: #bfa37a;
+            text-decoration: none;
+        }
+
         @media (max-width: 480px) {
             .header { flex-direction: column; text-align: center; }
             .header img { margin-right: 0; margin-bottom: 15px; }
@@ -100,13 +105,9 @@
 </head>
 <body>
 
-<div class="audio-player">
-    <p style="font-size: 14px; color: #bfa37a; margin-bottom: 10px;">🎵 背景音樂播放</p>
-    <audio controls loop>
-        <source src="bg.mp3" type="audio/mpeg">
-        您的瀏覽器不支持音頻元素。
-    </audio>
-</div>
+<audio id="bgMusic" loop autoplay>
+    <source src="bg.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
     <div class="header">
@@ -146,14 +147,13 @@
         <p>皮克敏勤奮玩家</p>
         <div class="skill-bar"><span style="width:70%"></span></div>
     </div>
+
+    <div class="footer-link">
+        背景音樂來源：<a href="https://www.motionelements.com/zh-hant/stock-music-41700584-vlog-bgm-with-a-slightly-happy-mood" target="_blank">MotionElements</a>
+    </div>
 </div>
 
 <script>
 function editAbout() {
     let newText = prompt("請輸入新的自我介紹：", document.getElementById("about").innerText);
-    if(newText) document.getElementById("about").innerText = newText;
-}
-</script>
-
-</body>
-</html>
+    if(newText) document.getElementById("about
